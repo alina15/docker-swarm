@@ -1,0 +1,15 @@
+version: "3"
+services:
+  simpleweb:
+    image: alina1115:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - apache:/public
+
+    deploy:
+      mode: replicated
+      replicas: 4
+volumes:
+  apache:
+    external: true 
